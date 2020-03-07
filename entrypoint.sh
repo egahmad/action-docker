@@ -58,7 +58,7 @@ _docker_tag() {
 }
 
 _docker_push() {
-  echo "docker build -t ${IMAGE_URI}:${TAG_NAME} ${BUILD_PATH}"
+  echo "docker build -t ${IMAGE_URI}:${TAG_NAME}  --target ${IMAGE_TARGET} ${BUILD_PATH}"
   docker build -t ${IMAGE_URI}:${TAG_NAME} ${BUILD_PATH}
 
   _error_check
